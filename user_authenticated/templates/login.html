@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+{% if form.non_field_errors %}
+{% for error in form.non_field_errors %}
+<p class="text-danger">{{ error }}</p>
+{% endfor %}
+{% endif %}
+<div class="d-lg-flex gap-lg-5 ">
+    <div class="col-lg-5 col-md-5 col-sm-12 container-fluid">
+        <img class="border-5" src="{% static 'log.png'%}" style="width: 100%; height: 100%;"
+        alt="{% static 'log.png'%}">
+    </div>
+    <div class="border-primary  col-lg-5 col-md-5 col-sm-12 mt-5 p-5 mb-5 m-auto rounded">
+        
+        <h1 style="line-height: 0.1em; color:gray;" class="text-center  mt-5">Log In</h1>
+        <form method="post">
+            {% csrf_token %}
+    
+            {% for hidden_field in form.hidden_fields %}
+            {{ hidden_field }}
+            {% endfor %}
+    
+            {% for field in form.visible_fields %}
+            <div class="mb-4">
+                <label for="{{ field.id_for_label }}" class="form-label w-auto">
+                    {{ field.label }}
+                </label>
+                <input class="form-control shadow" name="{{ field.name }}" id="{{ field.id_for_label }}"
+                    type="{{ field.widget_type }}" placeholder="{{ field.label }}">
+                </div>
+                {% endfor %}
+                
+                <div class="d-grid">
+                    <button type="submit" class="btn btn-primary btn-block mt-3">Submit</button>
+                    <a href="{% url 'register'%}">Sing Up </a>
+            </div>
+        </form>
+    </div>
+    
+</div>
+<!-- login -->
+
+
+{% endblock %}

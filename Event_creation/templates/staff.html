@@ -1,0 +1,24 @@
+{% extends 'base.html'%}
+
+{% block content %}
+
+
+<div class="container mt-5 mb-5 d-flex gap-1 justify-content-center aling-items-center flex-wrap">
+  {% for i in events %}
+  <div class="card shadow-sm" style="width: 20rem ">
+    <div class="card-body">
+      <h5 class="card-title fw-bold">Event Name : {{i.event_name}}</h5>
+      <h6 class="card-title  fw-bold">Event Category : <span class="text-primary">{{i.event_category}}</h6>
+      <h6 class="card-title text-gray fw-bold">Event location : {{i.location}}</h6>
+      <h6 class="card-title fw-bold">Event Date : {{i.date}}</h6>
+      <h6 class="card-title fw-bold">Event Time : {{i.time}}</h6>
+      <h6 class="card-title fw-bold">Event Type : <span class="text-primary">{{i.event_type}}</span></h6>
+      <p class="card-text">{{i.description|truncatewords:10}}</p>
+      <a href="{% url 'delete' i.id%}  " class="btn btn-outline-danger">Delete</a>
+      <a href="{% url 'update' pk=i.id %}  " class="btn btn-outline-primary">Update</a>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+
+{% endblock%}

@@ -1,0 +1,65 @@
+{% extends 'base.html'%}
+
+{% block content %}
+<div class="table-responsive">
+  <table class="table-auto mx-auto w-75 shadow rounded px-5 mt-5 mb-5">  
+    <thead class="bg-success text-white text-left">
+    <tr class=" rounded p-5  text-light fw-bold">
+      <th class="px-4 py-2">User Name </th>
+      <th class="px-4 py-2">Event Name </th>
+      <th class="px-4 py-2">Event Category</th>
+      <th class="px-4 py-2">Event location </th>
+      <th class="px-4 py-2">Event Date </th>
+      <th class="px-4 py-2">Event Time </th>
+      <th class="px-4 py-2">Event Type </th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for i in confrim_user %}
+    <tr>
+      <td class="px-4 py-2">
+        {{ i.user.username }}
+      </td>
+      {% for event in i.save_events.all %}
+      <td class="px-4 py-2">
+        {{ event.event_name }}
+      </td>
+      <td class="px-4 py-2">
+        {{event.event_category}}
+      </td>
+      <td class="px-4 py-2">
+        {{event.location}}
+      </td>
+
+      <td class="px-4 py-2">
+        {{event.date}}
+      </td>
+      <td class="px-4 py-2">
+        {{event.time}}
+      </td>
+
+      <td class="px-4 py-2">
+        {{event.event_type}}
+      </td>
+      {% endfor %}
+    </tr>
+    {% endfor %}
+    <tr class="bg-primary text-white">
+      <th class="px-lg-5 py-2 text-right" colspan="3">Event Manager In event Creator </th>
+      <th class="px-lg-5 py-2 text-left">
+        $100
+      </th>
+      <th class="px-lg-5 py-2 text-left">
+        $150
+      </th>
+      <th class="px-lg-5 py-2 text-left">
+        $200
+      </th>
+      <th class="px-lg-5 py-2 text-left">
+        $300
+      </th>
+    </tr>
+  </tbody>
+</table>
+</div>
+{% endblock %}

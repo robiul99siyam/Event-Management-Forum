@@ -1,0 +1,16 @@
+{% extends 'base.html'%}
+{% block content %}
+<div class="container mt-5 mb-5 d-flex gap-1 justify-content-center aling-items-center flex-wrap">
+    <div class="card shadow-sm" style="width: 40rem">
+        <div class="card-body">
+          <h5 class="card-title fw-bold">Event Name : {{object.event_name}}</h5>
+          <h6 class="card-title  fw-bold">Event Category  : <span class="text-primary">{{i.event_category}}</h6>
+          <h6 class="card-title fw-bold">Event location  : {{object.location}}</h6>
+          <h6 class="card-title fw-bold">Event Date  : {{object.date}}</h6>
+          <h6 class="card-title fw-bold">Event Time  : {{object.time}}</h6>
+          <h6 class="card-title fw-bold">Event Type  : <span class="text-primary">{{i.event_type}}</span></h6>
+          <p class="card-text">{{object.description}}</p>
+        </div>
+    </div>
+  </div>
+{% endblock %}

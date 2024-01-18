@@ -1,0 +1,98 @@
+{% extends 'base.html'%}
+
+{% block content %}
+{% if form.non_field_errors %}
+{% for error in form.non_field_errors %}
+<p class="text-danger">{{ error }}</p>
+{% endfor %}
+{% endif %}
+
+<div class="container mt-5 mb-5 border-none shadow-lg p-5 rounded">
+    <h1 class="text-center "> Event Creation  </h1>
+    <form method="post" class="d-flex mt-5  flex-wrap gap-5 mb-5">
+        {% csrf_token %}
+        {% for hidden_field in form.hidden_fields %}
+        {{ hidden_field.errors }}
+        {{ hidden_field }}
+        {% endfor %}
+        <div class="mb-1 col-5 m-auto">
+            <label for="{{form.event_name.id_for_label}}" class="form-label">{{form.event_name.label}}</label>
+            {{ form.event_name }}
+            {% if form.event_name.errors %}
+            {% for error in form.event_name.errors %}
+            <p class="text-danger m-auto pb-2">{{ error }}</p>
+            {% endfor %}
+            {% endif %}
+        </div>
+
+
+        <div class="mb-1 col-5 m-auto">
+            <label for="{{form.time.id_for_label}}" class="form-label">{{form.time.label}}</label>
+            {{ form.time }}
+            {% if form.time.errors %}
+            {% for error in form.time.errors %}
+            <p class="text-bg-danger m-auto pb-2 ">{{error}}</p>
+            {% endfor %}
+            {% endif %}
+        </div>
+
+
+        <div class="mb-1 col-5 m-auto">
+            <label for="{{form.date.id_for_label}}" class="form-label">{{form.date.label}}</label>
+            {{ form.date }}
+            {% if for.date.errors %}
+            {% for error in form.date.errors %}
+            <p class="text-bg-danger m-auto pb-2 ">{{error}}</p>
+            {% endfor %}
+            {% endif %}
+        </div>
+
+
+        <div class="mb-1 col-5 m-auto">
+            <label for="{{form.event_type.id_for_label}}" class="form-label">{{form.event_type.label}}</label>
+            {{ form.event_type}}
+            {% if for.event_type.errors %}
+            {% for error in form.event_type.errors %}
+            <p class="text-bg-danger m-auto pb-2 ">{{error}}</p>
+            {% endfor %}
+            {% endif %}
+        </div>
+        <div class="mb-1 col-5 m-auto">
+            <label for="{{form.location.id_for_label}}" class="form-label">{{form.location.label}}</label>
+            {{ form.location}}
+            {% if form.location.errors %}
+            {% for error in form.location.errors %}
+            <p class="text-danger m-auto pb-2">{{ error }}</p>
+            {% endfor %}
+            {% endif %}
+        </div>
+        <div class="mb-1 col-5 m-auto">
+            <label for="{{form.event_category.id_for_label}}" class="form-label">{{form.event_category.label}}</label>
+            {{ form.event_category}}
+            {% if form.event_category.errors %}
+            {% for error in form.event_category.errors %}
+            <p class="text-danger m-auto pb-2">{{ error }}</p>
+            {% endfor %}
+            {% endif %}
+        </div>
+        <div class="mb-1 col-5 m-auto">
+            <label for="{{form.description.id_for_label}}" class="form-label">{{form.description.label}}</label>
+            {{ form.description}}
+            {% if form.description.errors %}
+            {% for error in form.description.errors %}
+            <p class="text-danger m-auto pb-2">{{ error }}</p>
+            {% endfor %}
+            {% endif %}
+        </div>
+
+
+        
+
+        <div class="mb-1 col-5 m-auto">
+            <button type="submit" class="btn btn-outline-primary px-5 m-auto">Create Now </button>
+        </div>
+    </form>
+</div>
+</div>
+{%endblock %}
+
