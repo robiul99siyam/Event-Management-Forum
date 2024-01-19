@@ -7,11 +7,10 @@ from django.contrib import messages
 from django.contrib.auth.models import User
 from user_authenticated.forms import UserRegister
 from user_authenticated.views import send_email
-from django.contrib.auth.decorators import login_required
 
 # ------------------- Event Creation Form ----------------------->
 
-@login_required
+
 class Event_cration_view(FormView):
     template_name = "event_creation.html"
     form_class = UserEventForm
@@ -33,7 +32,7 @@ class Event_cration_view(FormView):
         return super().form_valid(form)
 
 
-@login_required
+
 class staff_userView(ListView):
     template_name = 'staff.html'
     model = Event_creation_model
@@ -47,7 +46,8 @@ class staff_userView(ListView):
             print(queryset)
             return queryset
 
-@login_required
+
+
 class UpdateViewUser(UpdateView):
     template_name = 'event_creation.html'
     model = Event_creation_model
@@ -66,7 +66,6 @@ class UpdateViewUser(UpdateView):
     
    
 
-@login_required
 def confirm_event(request, id):
     event_instance = get_object_or_404(Event_creation_model, pk=id)
     confirm_event = Confirm_Event(user=request.user)
@@ -78,7 +77,9 @@ def confirm_event(request, id):
     event_instance.save()
     return redirect("home")
 
-@login_required
+
+
+
 class ProfileViewData(ListView):
     template_name = "profile.html"
     model = Event_creation_model
@@ -96,7 +97,9 @@ class ProfileViewData(ListView):
         context["time"] = Confirm_Event.objects.filter(user=self.request.user)
         return context
 
-@login_required
+
+
+
 def UserDeleteNow(request, id):
     user = Event_creation_model.objects.get(pk=id)
     messages.success(request, "Delete Succeessfully !")
@@ -105,7 +108,8 @@ def UserDeleteNow(request, id):
     return redirect("home")
 
 
-@login_required
+
+
 class ConfirmDetailListView(ListView):
     template_name = 'confrim_user.html'
     model = Confirm_Event
