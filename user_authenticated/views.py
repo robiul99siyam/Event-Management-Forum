@@ -7,7 +7,9 @@ from django.contrib.auth.views import LoginView,LogoutView
 from django.contrib import messages
 from django.core.mail import EmailMultiAlternatives
 from django.template.loader import render_to_string
-from django.contrib.auth import login
+from django.contrib.auth import login,logout
+from django.contrib.auth.decorators import login_required
+
 
 
 
@@ -43,6 +45,8 @@ class RegisterView(FormView):
 
 
 #------------------------------ User login View ------------------------->
+    
+
 class UserLoginView(LoginView):
     template_name = 'login.html'
     def get_success_url(self):
@@ -54,17 +58,14 @@ class UserLoginView(LoginView):
 
 
 #---------------------- User Logout View ----------------------------->
-class UserLogOutView(LogoutView):
-    def get_success_url(self):
-        messages.success(self.request,'Logged out Successfully !')
-        return reverse_lazy('home')
-
-
-#------------------- user resgiert update now --------------->
-    
 
 
 
+@login_required
+def  UserLogOutView(request):
+    logout(request)
+    messages.success(request,"Logged out Successfully !")
+    return redirect('home')
 
 
 
