@@ -1,0 +1,313 @@
+body {
+
+  background-color:white !important;
+
+}
+
+nav {
+  color: #140696be !important;
+}
+
+* Underline From Left */ .hvr-underline-from-left {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  position: relative;
+  overflow: hidden;
+}
+
+.hvr-underline-from-left:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: 0;
+  right: 100%;
+  bottom: 0;
+  background: linear-gradient(to right, rgb(46, 14, 160), rgb(128, 0, 111), blue) !important;
+  height: 4px;
+  -webkit-transition-property: right;
+  transition-property: right;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+
+.hvr-underline-from-left:hover:before,
+.hvr-underline-from-left:focus:before,
+.hvr-underline-from-left:active:before {
+  right: 0;
+}
+
+.banner-color {
+  background-color: rgb(58, 79, 162);
+  color: white;
+  height: 600px;
+  width: 100.9% !important;
+
+}
+
+.benner-h1 {
+  font-size: 55px;
+  font-weight: bolder;
+
+}
+
+.btn-button {
+  width: 250px;
+  background-color: white;
+  color: black;
+  text-decoration: none;
+}
+
+
+
+
+/* sweep to right */
+
+
+.hvr-sweep-to-right {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  position: relative;
+  -webkit-transition-property: color;
+  transition-property: color;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+}
+
+.hvr-sweep-to-right:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgb(243, 224, 117) !important;
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transform-origin: 0 50%;
+  transform-origin: 0 50%;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+
+.hvr-sweep-to-right:hover,
+.hvr-sweep-to-right:focus,
+.hvr-sweep-to-right:active {
+  color: black !important;
+}
+
+.hvr-sweep-to-right:hover:before,
+.hvr-sweep-to-right:focus:before,
+.hvr-sweep-to-right:active:before {
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
+}
+
+.all-button {
+  background-color: rgb(51, 49, 155) !important;
+  color: white !important;
+}
+
+
+
+
+
+/* Sweep To Bottom */
+.hvr-sweep-to-bottom {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  position: relative;
+  -webkit-transition-property: color;
+  transition-property: color;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+}
+
+.hvr-sweep-to-bottom:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #3702f8 !important;
+  -webkit-transform: scaleY(0);
+  transform: scaleY(0);
+  -webkit-transform-origin: 50% 0;
+  transform-origin: 50% 0;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+
+.hvr-sweep-to-bottom:hover,
+.hvr-sweep-to-bottom:focus,
+.hvr-sweep-to-bottom:active {
+  color: white;
+}
+
+.hvr-sweep-to-bottom:hover:before,
+.hvr-sweep-to-bottom:focus:before,
+.hvr-sweep-to-bottom:active:before {
+  -webkit-transform: scaleY(1);
+  transform: scaleY(1);
+}
+
+.bg-color {
+  background-color: rgb(49, 20, 146);
+  color: white;
+  height: 600px;
+  width: 100.9% !important;
+}
+
+
+
+
+
+
+/* Shrink */
+.hvr-shrink {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+}
+
+.hvr-shrink:hover,
+.hvr-shrink:focus,
+.hvr-shrink:active {
+  -webkit-transform: scale(0.9);
+  transform: scale(0.9);
+}
+
+
+.card-line{
+  line-height: 2rem;
+  text-align: center;
+  
+}
+
+.banner
+{
+  background-color: rgb(58, 79, 162);
+  color: white;
+  height: 300px;
+  width: 100% !important;
+
+}
+
+
+
+/* Back Pulse */
+@-webkit-keyframes hvr-back-pulse {
+  50% {
+    background-color: rgba(32, 152, 209, 0.75);
+  }
+}
+@keyframes hvr-back-pulse {
+  50% {
+    background-color: rgba(32, 152, 209, 0.75);
+  }
+}
+.hvr-back-pulse {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  overflow: hidden;
+  -webkit-transition-duration: 0.5s;
+  transition-duration: 0.5s;
+  -webkit-transition-property: color, background-color;
+  transition-property: color, background-color;
+  color: initial-color !important; 
+}
+.hvr-back-pulse:hover, .hvr-back-pulse:focus, .hvr-back-pulse:active {
+  -webkit-animation-name: hvr-back-pulse;
+  animation-name: hvr-back-pulse;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-delay: 0.5s;
+  animation-delay: 0.5s;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  background-color: rgb(156, 134, 228) !important;
+  color: white !important;
+}
+
+
+/* ------------------------------------- responsive ----------------------- */
+.bg-banner
+{
+  height: 500px;
+}
+
+@media (max-width: 576px) {
+
+  .banner-color {
+    background-color: rgb(58, 79, 162) !important;
+    color: white !important;
+    height: 715px !important;
+    width: 103.2% !important;
+  }
+
+  .sm-btn {
+
+    margin-bottom: 50px;
+  }
+
+  .bg-color {
+    background-color: rgb(49, 20, 146);
+    color: white;
+    height: 1200px;
+    
+  }
+  .responce-pic
+  {
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+  }
+  .bg-banner{
+    height: 402px;
+  }
+  .benner-h1 {
+    font-size: 45px;
+    font-weight: bolder;
+  
+  }
+  .bg-color {
+    background-color: rgb(49, 20, 146);
+    color: white;
+    height:1250px;
+    width: 103.2% !important;
+  }
+  
+  
+}

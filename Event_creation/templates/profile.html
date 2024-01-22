@@ -2,24 +2,30 @@
 
 {% block content %}
 
-
-<div class="container mt-5 mb-5 d-flex gap-1 justify-content-center aling-items-center flex-wrap">
+<div class=" container mt-5  mb-5 d-flex gap-1 justify-content-center aling-items-center flex-wrap">
   {% for i in data %}
-  <div class="card shadow-sm" style="width: 20rem ">
-    <div class="card-body">
-      <h5 class="card-title fw-bold">Event Name : {{i.event_name}}</h5>
-      <h6 class="card-title  fw-bold">Event Category : <span class="text-primary">{{i.event_category}}</h6>
-      <h6 class="card-title text-gray fw-bold">Event location : {{i.location}}</h6>
-      <h6 class="card-title fw-bold">Event Date : {{i.date}}</h6>
-      <h6 class="card-title fw-bold">Event Time : {{i.time}}</h6>
-      <h6 class="card-title fw-bold">Event Type : <span class="text-primary">{{i.event_type}}</span></h6>
-      <p class="card-text">{{i.description|truncatewords:10}}</p>
-      {% for t in time %}
-      <h6 class="card-title fw-bold">Confirm Time: {{t.creation_time}}</h6>
-      {% endfor %}
-    </div>
+  <div class="card  hvr-back-pulse card-line " style="width: 23rem ; height: 26rem;">
+    <a href="{% url 'details' i.id%}" class="text-decoration-none text-dark">
+      <div class="card-body ">
+        <h5 class="card-title fw-bold"> {{i.event_name}}</h5>
+        <h6 class="card-title  fw-bold">{{i.event_category}}</h6>
+        <h6 class="card-title text-gray fw-bold">{{i.location}}</h6>
+        <br>
+        <hr class="border-5 border-light">
+        <h6 class="card-title fw-bold">{{i.date}}</h6>
+        <h6 class="card-title fw-bold"> {{i.time}}</h6>
+        <h6 class="card-title fw-bold">Attendence count - {{i.count}}
+        </h6>
+        <h6 class="card-title fw-bold">{{i.event_type}}</h6>
+    </a>
   </div>
-  {% endfor %}
+
 </div>
+{% endfor %}
+</div>
+
+
+
+
 
 {% endblock%}
