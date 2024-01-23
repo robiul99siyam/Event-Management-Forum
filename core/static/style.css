@@ -257,7 +257,7 @@ nav {
   animation-timing-function: linear;
   -webkit-animation-iteration-count: infinite;
   animation-iteration-count: infinite;
-  background-color: rgb(156, 134, 228) !important;
+  background-color: rgb(240, 239, 239) !important;
   color: white !important;
 }
 

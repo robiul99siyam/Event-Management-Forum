@@ -1,6 +1,6 @@
 {% load static %}
 
-<nav style="background-color: rgb(240, 239, 239);" class="navbar py-3 navbar-expand-lg bg-body-tertiary sticky-top">
+<nav style="background-color: rgb(240, 239, 239);" class="navbar py-1 navbar-expand-lg bg-body-tertiary sticky-top">
   <div class="container">
     <a class="navbar-brand" href="{% url 'home'%}">
       <img src="{% static 'logo.png.webp'%}" alt="Logo" class="d-inline-block align-text-top" />
@@ -30,7 +30,7 @@
       <div class="d-flex">
         {% if user.is_authenticated %}
         <div class="dropdown">
-          <a class="dropdown-toggle mx-lg-4 mx-4 fw-bolder text-dark text-decoration-none" type="button"
+          <a class="dropdown-toggle mx-lg-4 mx-4 my-3 fw-bolder text-dark text-decoration-none" type="button"
             data-bs-toggle="dropdown" aria-expanded="false">
             Welcome, {{user.username}}
           </a>
@@ -46,12 +46,12 @@
             {% endif %}
           </ul>
         </div>
-        <a class="all-button hvr-sweep-to-bottom btn " href="{% url 'logout'%}">logout</a>
+        <a class="all-button hvr-sweep-to-bottom btn px-5 py-2  mb-2 mt-2 " href="{% url 'logout'%}">logout</a>
 
         {% else %}
        
-          <a href="{% url 'register'%}" class="hvr-sweep-to-bottom  px-5 py-2 all-button fw-bold btn shadow  mt-3">Register</a>
-          <a href="{% url 'login'%}" class="hvr-sweep-to-bottom  px-5 py-2 all-button fw-bold btn shadow  mt-3">LogIn</a>
+          <a href="{% url 'register'%}" class="hvr-sweep-to-bottom  px-5 py-2 mb-2 all-button fw-bold btn shadow  mt-3">Register</a>
+          <a href="{% url 'login'%}" class="hvr-sweep-to-bottom  px-5 py-2  mb-2 all-button fw-bold btn shadow  mt-3">LogIn</a>
         {% endif %}      
       </div>
     </div>

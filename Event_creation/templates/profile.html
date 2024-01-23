@@ -1,31 +1,65 @@
+
+
+
+
+
 {% extends 'base.html'%}
 
 {% block content %}
+<div class="table-responsive">
+  <table class="table-auto mx-auto w-75 shadow rounded px-5 mt-5 mb-5">
+    <thead class="bg-danger text-white text-left">
+      <tr class=" rounded p-5  text-light fw-bold">
+        <th class="px-4 py-2">Event Name </th>
+        <th class="px-4 py-2">Event Category</th>
+        <th class="px-4 py-2">Event location </th>
+        <th class="px-4 py-2">Event Date </th>
+        <th class="px-4 py-2">Event Time </th>
+        <th class="px-4 py-2">Event Type </th>
+        
+      </tr>
+    </thead>
+    <tbody>
+      {% for i in data %}
+      <tr>
+        <td class="px-4 py-2">
+          {{i.event_name}}
+        </td>
+        <td class="px-4 py-2">
+          {{i.event_category}}
+        </td>
+        <td class="px-4 py-2">
+          {{i.location}}
+        </td>
 
-<div class=" container mt-5  mb-5 d-flex gap-1 justify-content-center aling-items-center flex-wrap">
-  {% for i in data %}
-  <div class="card  hvr-back-pulse card-line " style="width: 23rem ; height: 26rem;">
-    <a href="{% url 'details' i.id%}" class="text-decoration-none text-dark">
-      <div class="card-body ">
-        <h5 class="card-title fw-bold"> {{i.event_name}}</h5>
-        <h6 class="card-title  fw-bold">{{i.event_category}}</h6>
-        <h6 class="card-title text-gray fw-bold">{{i.location}}</h6>
-        <br>
-        <hr class="border-5 border-light">
-        <h6 class="card-title fw-bold">{{i.date}}</h6>
-        <h6 class="card-title fw-bold"> {{i.time}}</h6>
-        <h6 class="card-title fw-bold">Attendence count - {{i.count}}
-        </h6>
-        <h6 class="card-title fw-bold">{{i.event_type}}</h6>
-    </a>
-  </div>
+        <td class="px-4 py-2">
+          {{i.date}}
+        </td>
+        <td class="px-4 py-2">
+          {{i.time}}
+        </td>
 
+        <td class="px-4 py-2">
+          {{i.event_type}}
+        </td>
+
+
+      </tr>
+      {% endfor %}
+      <tr class="bg-dark text-white">
+        <th class="px-lg-5 py-2 text-right" colspan="3">Event Manager In event Creator </th>
+        <th class="px-lg-5 py-2 text-left">
+          $100
+        </th>
+        <th class="px-lg-5 py-2 text-left">
+          $150
+        </th>
+        <th class="px-lg-5 py-2 text-left">
+          $200
+        </th>
+        
+      </tr>
+    </tbody>
+  </table>
 </div>
-{% endfor %}
-</div>
-
-
-
-
-
-{% endblock%}
+{% endblock %}

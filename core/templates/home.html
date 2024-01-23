@@ -125,7 +125,7 @@
 
 
 <div class="container text-center mt-5">
-  <h1>program confirm</h1>
+  <h1 class="fw-bold ">Program Confirm</h1>
   <p>There arge many variations ohf passages of sorem gp ilable, but <br> the majority have ssorem gp iluffe.</p>
 </div>
 
@@ -136,11 +136,11 @@
       <div class="card-body ">
         <h5 class="card-title fw-bold"> {{i.event_name}}</h5>
         <h6 class="card-title  fw-bold">{{i.event_category}}</h6>
-        <h6 class="card-title text-gray fw-bold">{{i.location}}</h6>
+        <h6 class="card-title text-gray fw-bold"><i class="bi bi-geo-alt-fill"></i>{{i.location}}</h6>
         <br>
         <hr class="border-5 border-light">
-        <h6 class="card-title fw-bold">{{i.date}}</h6>
-        <h6 class="card-title fw-bold"> {{i.time}}</h6>
+        <h6 class="card-title fw-bold"><i class="bi bi-calendar3"></i> {{i.date}}</h6>
+        <h6 class="card-title fw-bold"><i class="bi bi-stopwatch-fill"></i>{{i.time}}</h6>
         <h6 class="card-title fw-bold">Attendence count - {{i.count}}
         </h6>
         <h6 class="card-title fw-bold">{{i.event_type}}</h6>
@@ -195,6 +195,45 @@
     </div>
   </div>
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+<h1 class="text-center fw-bold mt-5">News From Blog</h1>
+<p class="text-center">There arge many variations ohf passages of sorem gp ilable, <br>but the majority have ssorem gp iluffe.</p>
+<div class="row row-cols-1 row-cols-md-2 mb-5 g-4 mx-auto container">
+  <div class="col mb-5">
+    <div class="card">
+      <img class="hvr-shrink " src="{% static 'home-blog1.png.webp'%}" alt="{% static 'cisco_brand6.png.webp'%}">
+      <div class="card-body">
+        <p class="card-title">I physic</p>
+        <h4 style="color: rgb(6,0,26);" class="card-text fw-bold">Footprints in Time is perfect House in Kurashiki</h4>
+      </div>
+    </div>
+  </div>
+  <div class="col mb-5 ">
+    <div class="card">
+      <img class="hvr-shrink " src="{% static 'home-blog2.png.webp'%}" alt="{% static 'cisco_brand6.png.webp'%}">
+      <div class="card-body">
+        <p class="card-title">I physic</p>
+        <h4 style="color: rgb(6,0,26);" class="card-text fw-bold">Footprints in Time is perfect House in Kurashiki</h4>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
 
 
 
