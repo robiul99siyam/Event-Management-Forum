@@ -5,7 +5,7 @@ from .models import Apply_Organizer
 
 
 # ----------------------- User Register Form Now------------------------->
-class UserRegister(UserCreationForm):
+class UserRegisterForm(UserCreationForm):
     apply_organizer = forms.BooleanField(
         initial=False,
         required=False,
@@ -28,6 +28,7 @@ class UserRegister(UserCreationForm):
 
     def save(self, commit=True):
         our_user = super().save(commit=False)
+        our_user.is_active = False
         if commit:
             our_user.save()
             apply = self.cleaned_data.get("apply_organizer")
@@ -44,8 +45,8 @@ class UserRegister(UserCreationForm):
             raise forms.ValidationError("Email Already Exist !")
         return email
 
-    def __init__(self, **kwargs):
-        super().__init__(**kwargs)
+    def __init__(self, *args, **kwargs):
+        super(UserRegisterForm, self).__init__(*args, **kwargs)
         for field in self.fields:
             if field != "apply_organizer":
                 self.fields[field].widget.attrs.update({"class": "form-control"})

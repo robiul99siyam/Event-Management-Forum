@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'Event_creation',
     "crispy_forms",
     "crispy_bootstrap5",
+    "rest_framework",
 ]
 
 

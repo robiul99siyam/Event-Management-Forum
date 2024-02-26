@@ -24,8 +24,18 @@ class Event_creation_model(models.Model):
         return self.event_name
 
 
+EVENT_STATUS =  [
+    ("Pending","Pending"),
+    ("Approved","Approved"),
+
+]
 
 class Confirm_Event (models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     save_events = models.ManyToManyField(Event_creation_model,related_name='save_events')
     creation_time = models.DateTimeField(auto_now_add=True)
+    event_status = models.CharField(max_length=20,choices=EVENT_STATUS,null = True,default="Pending")
+
+    def __str__(self):
+        event_names = ', '.join([event.event_name for event in self.save_events.all()])
+        return f"username : {self.user.username} event Name : {event_names}"

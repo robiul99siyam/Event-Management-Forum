@@ -5,7 +5,7 @@ from .models import Event_creation_model, Confirm_Event
 from django.urls import reverse_lazy
 from django.contrib import messages
 from django.contrib.auth.models import User
-from user_authenticated.forms import UserRegister
+from user_authenticated.forms import UserRegisterForm
 from user_authenticated.views import send_email
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
@@ -99,6 +99,7 @@ class ProfileViewData(ListView,LoginRequiredMixin):
             id__in=self.get_queryset()
         )
         context["time"] = Confirm_Event.objects.filter(user=self.request.user)
+        print(confirm_event)
         return context
 
 

@@ -23,7 +23,7 @@
         </li>
         {% if user.is_authenticated and user.is_staff %}
         <li class="nav-item hvr-underline-from-left ">
-          <a href="{% url 'event_creation'%}" aria-current="page" class="nav-link fw-bold ">Event Organizer </a>
+          <a href="{% url 'event_creation'%}" aria-current="page" class="nav-link fw-bold ">Event Organizer  </a>
         </li>
         {% endif %}
       </ul>
@@ -50,8 +50,8 @@
 
         {% else %}
        
-          <a href="{% url 'register'%}" class="hvr-sweep-to-bottom  px-5 py-2 mb-2 all-button fw-bold btn shadow  mt-3">Register</a>
-          <a href="{% url 'login'%}" class="hvr-sweep-to-bottom  px-5 py-2  mb-2 all-button fw-bold btn shadow  mt-3">LogIn</a>
+          <a href="{% url 'register'%}" class="hvr-sweep-to-bottom  px-5 py-2 mb-2 all-button fw-bold btn shadow   mt-3">Register</a>
+          <a href="{% url 'login'%}" class="hvr-sweep-to-bottom  px-5 py-2  mb-2 all-button fw-bold btn shadow  gap-2 mt-3">LogIn</a>
         {% endif %}      
       </div>
     </div>
