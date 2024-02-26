@@ -54,7 +54,7 @@ def register(request):
             print("token ", token)
             uid = urlsafe_base64_encode(force_bytes(user.pk))
             print("uid ", uid)
-            confirm_link = f"https://event-managements-forums.onrender.com/user/active/{uid}/{token}"
+            confirm_link = f"https://event-management-forum-36ct.onrender.com/user/active/{uid}/{token}"
             print(confirm_link)
             email_subject = "Confirm Your Email"
             email_body = render_to_string('active.html', {'confirm_link' : confirm_link})
