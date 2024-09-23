@@ -1,4 +1,4 @@
-User Authentication: 
+## User Authentication: 
 
 Users can register for an account and log in.
 User roles: Event Organizers and Attendees.
